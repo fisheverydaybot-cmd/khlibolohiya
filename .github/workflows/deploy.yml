@@ -1,0 +1,43 @@
+# Після кожної зміни в гілці main GitHub сам збирає сайт і публікує його (2–3 хвилини).
+name: Зібрати і опублікувати довідник
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Зібрати сайт
+        run: python3 src/build.py _site
+      - name: Підготувати PDF бланків
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+          node src/gen_pdf.js _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

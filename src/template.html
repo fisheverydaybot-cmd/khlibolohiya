@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__ · __BRAND__</title>
+<meta name="theme-color" content="__C__">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style id="page-style">@page{size:A4 portrait;margin:10mm}</style>
+<style>
+:root{--c:__C__;--c2:__C2__;--ink:#2a2119;--q:#6b5d50;--line:#e3d9cc;--bg:__BG__;--warn:#fff4dc}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{position:sticky;top:0;z-index:5;background:var(--c);color:#fff;padding:10px 14px 12px;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+header .top{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto 8px}
+header a{color:#fff;text-decoration:none;font-weight:700;font-size:18px}
+header small{opacity:.8;font-size:12px}
+#search-form{max-width:760px;margin:0 auto}
+#search{width:100%;font-size:17px;padding:11px 14px;border:0;border-radius:10px;outline:none}
+main{max-width:760px;margin:0 auto;padding:14px 14px 60px}
+h2{font-size:21px;line-height:1.3;margin:6px 0 12px}
+h3{font-size:17px;margin:20px 0 8px}
+.hero p{margin:4px 0 14px;color:var(--q)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
+.tile{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:112px;color:var(--ink);text-decoration:none;font-weight:600}
+.tile .ico{font-size:26px}
+.tile small{font-weight:400;color:var(--q)}
+.tile.alt{background:var(--c2);border-color:#ead7bd}
+.back{display:inline-block;margin:2px 0 8px;color:var(--c);text-decoration:none;font-size:15px}
+.qlist{list-style:none;margin:0;padding:0}
+.qlist li a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:8px;color:var(--ink);text-decoration:none;font-weight:500}
+.qlist li a small{display:block;color:var(--q);font-weight:400;font-size:13px;margin-top:2px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h2{margin-top:0}
+.card ol,.card ul{padding-left:22px;margin:8px 0}
+.card li{margin:6px 0}
+.note{margin-top:14px;color:var(--q);font-size:15px}
+.more{color:var(--q);font-size:14px;text-transform:uppercase;letter-spacing:.03em}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+.card th,.card td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.card th{background:var(--c2)}
+@media(max-width:620px){
+.card table.stack thead{display:none}
+.card table.stack,.card table.stack tbody,.card table.stack tr,.card table.stack td{display:block;width:100%}
+.card table.stack tr{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.card table.stack td{border:0;border-top:1px solid var(--line)}
+.card table.stack td:first-child{border-top:0;background:var(--c2);font-weight:700}
+.card table.stack td:not(:first-child)[data-l]:not([data-l=""])::before{content:attr(data-l);display:block;font-size:12px;color:var(--q);text-transform:uppercase;letter-spacing:.03em}
+}
+.forms-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 4px}
+.forms-row .lbl{color:var(--q);font-size:14px}
+.chip{border:1px solid #d4b48c;background:var(--c2);color:var(--c);border-radius:999px;padding:8px 12px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.doc{color:var(--q);font-size:14px;margin:6px 0 0}
+.ask{margin-top:18px;padding:12px 14px;background:var(--warn);border-radius:12px;font-size:15px}
+.btn{background:var(--c);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+a.btn{display:inline-block;text-decoration:none}
+[hidden]{display:none!important}
+.btn.ghost{background:#fff;color:var(--c);border:1px solid var(--c)}
+.flist{list-style:none;padding:0;margin:12px 0}
+.flist li{display:flex;gap:12px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.flist small{display:block;color:var(--q);font-size:13px}
+.picker{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 6px}
+.picker label,.full{display:flex;flex-direction:column;font-size:13px;color:var(--q);gap:4px;flex:1 1 220px}
+.full{margin:6px 0 12px}
+select,input[type=url]{font:inherit;font-size:16px;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.op1{align-self:flex-end;font-size:14px;color:var(--q);padding-bottom:10px}
+.sub{color:var(--q);margin:4px 0 8px}
+.warn{background:var(--warn);padding:10px 12px;border-radius:10px;font-size:14px}
+.qsel{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px;max-height:340px;overflow:auto;font-size:15px}
+.actions{margin:12px 0}
+.stickers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sticker{border:1px dashed #9aa6ae;border-radius:8px;padding:10px;text-align:center;background:#fff;break-inside:avoid}
+.sticker .qr svg{width:100%;max-width:150px;height:auto}
+.st-t{font-weight:700;font-size:14px;line-height:1.25;margin-top:4px}
+.st-s{font-size:11px;color:var(--q);margin-top:3px}
+.sticker.home{border:2px solid var(--c)}
+.poster{text-align:center;font-family:Arial,sans-serif;color:#000;padding-top:8mm}
+.p-logo{width:32mm;height:32mm;display:block;margin:0 auto 3mm}
+.p-t{font-size:34pt;font-weight:700}
+.p-s{font-size:16pt;margin-bottom:8mm}
+.p-qr svg{width:115mm;height:115mm}
+.p-c{font-size:20pt;font-weight:700;margin-top:6mm}
+.p-l{display:inline-block;text-align:left;font-size:14pt;margin:5mm 0}
+.p-u{font-size:11pt;color:#444}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:20;padding:16px}
+#modal[hidden]{display:none}
+#modal .box{background:#fff;border-radius:14px;padding:16px;max-width:460px;width:100%;max-height:92vh;overflow:auto}
+#print-root{display:none}
+#preview{position:fixed;inset:0;z-index:30;background:#dfe6ea;display:flex;flex-direction:column}
+#preview[hidden]{display:none}
+body.pv-open{overflow:hidden}
+.pv-top{background:#fff;padding:10px 14px 4px;border-bottom:1px solid var(--line)}
+.pv-title{font-weight:700;font-size:17px}
+.pv-top .picker{margin:6px 0 4px}
+.pv-scroll{flex:1;overflow:auto;padding:12px 8px;-webkit-overflow-scrolling:touch}
+.pv-sheet{margin:0 auto;position:relative}
+.pv-page{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transform-origin:0 0;position:absolute;left:0;top:0;padding:8mm}
+.pv-p{width:210mm;min-height:297mm}.pv-l{width:297mm;min-height:210mm}
+.pv-bar{display:flex;gap:10px;justify-content:space-between;background:#fff;padding:10px 14px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.pv-bar .btn{flex:1;font-size:17px;padding:13px}
+/* бланки */
+.form-page{font:11pt/1.3 Arial,sans-serif;color:#000;padding:0 1.5px}
+.f-head{display:flex;justify-content:space-between;gap:12px;font-size:10pt;border-bottom:1.5px solid #000;padding-bottom:4px}
+.f-org{font-weight:700}
+.f-code{text-align:right;font-size:9pt}
+.f-title{font-size:15pt;text-align:center;margin:8px 0 2px}
+.f-period{text-align:center;font-size:10pt;margin-bottom:8px}
+.f-intro{font-size:10pt;margin:4px 0 8px}
+.f-cap{font-weight:700;font-size:10pt;margin:10px 0 3px}
+.f-grid{width:99.6%;border-collapse:collapse;table-layout:fixed}
+.f-grid th{border:1px solid #000;font-size:8.5pt;padding:3px;background:#eee;vertical-align:middle;text-align:center}
+.f-grid td{border:1.2px solid #000;height:9mm;font-size:9pt;padding:2px 4px}
+.portrait .f-grid td{height:8mm}
+.f-fields{width:99.6%;border-collapse:collapse}
+.f-fields th{width:38%;text-align:left;font-weight:400;font-size:10pt;border:1.2px solid #000;padding:6px;vertical-align:top}
+.f-fields td{border:1.2px solid #000;height:14mm}
+@media print{
+  body{background:#fff}
+  body.printing header,body.printing main,body.printing #modal,body.printing #preview{display:none!important}
+  body.printing #print-root{display:block}
+  .stickers{grid-template-columns:repeat(3,1fr);gap:4mm}
+  .sticker{border:1px dashed #777}
+  .sticker .qr svg{max-width:45mm}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><a href="#" id="home">__EMOJI__ __TITLE__</a><small>__BRAND____NOTE__</small></div>
+  <form id="search-form" role="search"><input id="search" type="search" placeholder="__HINT__" autocomplete="off"></form>
+</header>
+<main id="main"></main>
+<div id="modal" hidden><div class="box"></div></div>
+<div id="print-root"></div>
+<script type="text/markdown" id="content-md">__CONTENT__</script>
+<script type="application/json" id="settings-json">__SETTINGS__</script>
+<script type="application/json" id="forms-json">__FORMS__</script>
+<script>__QRLIB__</script>
+<script>__APP__</script>
+</body>
+</html>

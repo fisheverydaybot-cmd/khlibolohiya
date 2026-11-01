@@ -1,0 +1,62 @@
+{
+  "title": "Довідник НАССР",
+  "brand": "Хлібологія · Пані Піта",
+  "emoji": "🥐",
+  "note": "чернетка",
+  "city": "м. Полтава",
+  "siteUrl": "https://fisheverydaybot-cmd.github.io/khlibolohiya/",
+  "pointLabel": "Заклад",
+  "askWho": "старшому пекарю, старшому кухарю або керівнику групи НАССР",
+  "rule": "Сумніваєшся — відклади і запитай.",
+  "searchHint": "Пошук: яйця, крем, охолодження, алергени…",
+  "colors": {
+    "main": "#8a4b14",
+    "light": "#f7ecdd",
+    "bg": "#faf7f2"
+  },
+  "icons": {
+    "1": "📦",
+    "2": "🥚",
+    "3": "🔥",
+    "4": "❄️",
+    "5": "🌾",
+    "6": "🧽",
+    "7": "🧼",
+    "8": "⚠️"
+  },
+  "points": [
+    {
+      "id": "khlibolohiya",
+      "name": "Магазин-пекарня «Хлібологія», вул. Раїси Кириченко, 72",
+      "ops": [
+        "ФОП Моркотун Олександр Петрович"
+      ]
+    },
+    {
+      "id": "pani-pita",
+      "name": "Кафетерій «Пані Піта», вул. Олеся Гончара, 27",
+      "ops": [
+        "ФОП Німченко Марина Сергіївна"
+      ]
+    }
+  ],
+  "qrDefault": [
+    "home",
+    "yaitsia",
+    "vypikannya",
+    "kremy",
+    "okholodzhennya",
+    "rozihriv",
+    "vydacha",
+    "temperatury",
+    "kholodylnyk-teplo",
+    "alergeny",
+    "pryimannya",
+    "dezrozchyn",
+    "ruky",
+    "zdorovya",
+    "olia",
+    "sklo"
+  ],
+  "logo": "icon-512.png"
+}

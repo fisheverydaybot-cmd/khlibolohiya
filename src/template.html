@@ -10,11 +10,11 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <style id="page-style">@page{size:A4 portrait;margin:10mm}</style>
 <style>
-:root{--c:__C__;--c2:__C2__;--ink:#2a2119;--q:#6b5d50;--line:#e3d9cc;--bg:__BG__;--warn:#fff4dc}
+:root{--c:__C__;--c2:__C2__;--ink:#2a2119;--q:#6b5d50;--line:#e3d9cc;--bg:__BG__;--gold:__GOLD__;--warn:#fff4dc}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-header{position:sticky;top:0;z-index:5;background:var(--c);color:#fff;padding:10px 14px 12px;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+header{position:sticky;top:0;z-index:5;background:var(--c);color:#fff;padding:10px 14px 12px;box-shadow:0 1px 4px rgba(0,0,0,.15);border-bottom:3px solid var(--gold)}
 header .top{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto 8px}
 header a{color:#fff;text-decoration:none;font-weight:700;font-size:18px}
 header small{opacity:.8;font-size:12px}
@@ -28,6 +28,7 @@ h3{font-size:17px;margin:20px 0 8px}
 @media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
 .tile{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:112px;color:var(--ink);text-decoration:none;font-weight:600}
 .tile .ico{font-size:26px}
+.tile{border-top:3px solid var(--gold)}
 .tile small{font-weight:400;color:var(--q)}
 .tile.alt{background:var(--c2);border-color:#ead7bd}
 .back{display:inline-block;margin:2px 0 8px;color:var(--c);text-decoration:none;font-size:15px}
